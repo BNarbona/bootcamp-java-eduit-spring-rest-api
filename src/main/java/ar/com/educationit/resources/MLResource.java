@@ -3,6 +3,7 @@ package ar.com.educationit.resources;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,8 @@ import ar.com.educationit.entity.Categoria;
 @RestController
 public class MLResource {
 
-	RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@GetMapping("/categorias")
 	public ResponseEntity<List<Categoria>> getApi() {
